@@ -1,0 +1,16 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: #C5C1C1;
+}
+
+.links{
+      display: flex;
+  justify-content: flex-end;
+  list-style: none; 
+  gap: 15px; 
+}
