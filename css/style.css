@@ -10,7 +10,7 @@
   display: flex;
   justify-content: space-between; 
   align-items: center;            
-  background-color: #F5F5F5;      
+  background-color: #BCCCDC;      
   padding: 1rem 2rem;             
   color: #ffffff;
 }
@@ -21,6 +21,9 @@
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: bold;
+}
+.logo img{
+    border-radius: 25px;
 }
 
 
