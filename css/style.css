@@ -54,3 +54,22 @@
 .btn:hover {
   background-color: #2980b9;
 }
+
+.inicio {
+  text-align: center;
+}
+
+.inicio h1{
+  text-align: center;
+  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 45px;
+}
+.minutos_cor_diferente{
+  color: #2980b9;
+}
+.slogan{
+  margin-top: 20px;
+  font-size: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
