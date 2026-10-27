@@ -18,10 +18,12 @@ body {
   display: flex;
   justify-content: space-between; 
   align-items: center;            
-  background-color: #bcccdc;      
-  padding: 0.8rem 2rem;         
+  background-color: #BCCCDC;      
+  padding: 0rem 2rem;         
   color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  height: auto;
+  flex-wrap: wrap;          
+  gap: 1rem;                 
 }
 
 .logo {
@@ -55,10 +57,6 @@ body {
 
 .btn:hover {
   background-color: #2980b9;
-}
-
-.btn-active {
-  background-color: #1d6fa5;
 }
 
 .login-container {
