@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecaniQ - Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="logo">
+    <a href="#"><img src="../images/logo_title_sem.png" alt="Logotipo"></a>
+  </div>
+
+  <div class="nav-links">
+    <a href="../index.html" class="btn">Início</a>
+    <a href="#" class="btn btn-active">Login</a>
+    <a href="#" class="btn">Criar Conta</a>
+  </div>
+</nav>
+
+<main class="login-container">
+    <section id="login_card" class="login_card">
+        <!-- GET temporário até termos a BD -->
+        <form action="index.html" method="GET" class="form">
+            <fieldset>
+                <legend>Dados de Login</legend>
+                
+                <div class="grupo">
+                    <label for="name">Digite o seu nome:</label>
+                    <input type="text" name="nome" id="name" placeholder="O seu nome" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="mail">Digite o seu email:</label>
+                    <input type="email" name="mail" id="mail" placeholder="exemplo@gmail.com" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="pass">Digite a sua password:</label>
+                    <input type="password" name="pass" id="pass" placeholder="••••••••••••" required>
+                </div>
+
+                <div class="botoes-grupo">
+                    <button type="submit" class="btn-submit">Submeter</button>
+                    <button type="reset" class="btn-reset">Limpar Dados</button>
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</main>
+
+</body>
+</html>
