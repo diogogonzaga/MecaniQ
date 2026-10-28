@@ -1,75 +1,187 @@
+/* Variaveis de Cores*/
+:root {
+  --primary: #2563eb;       /* Cor principal (Azul) */
+  --bg-navbar: #ffffff;     /* Fundo branco */
+  --text-main: #0f172a;     /* Cor do texto escuro */
+}
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+}
+
+/* ================   NAVBAR   ========================= */
+.navbar-header {
+  background-color: var(--bg-navbar);
+  position: sticky;       
+  top: 0;
+  z-index: 1000;          
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between; 
   align-items: center;            
-  background-color: #BCCCDC;      
-  padding: 0rem 2rem;         
-  color: #ffffff;
-  height: auto;
-  flex-wrap: wrap;          
-  gap: 1rem;                 
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-}
-
-.logo a {
-  display: block;              
-  height: auto;
+  padding: 0.8rem 1.5rem;         
+  position: relative;
 }
 
 .logo img {
-  border-radius: 25px;
-  width: 100%;                
-  max-width: 180px;            
-  height: auto;                
+  max-width: 150px;
+  height: auto;
   display: block;
 }
 
+/* ================   Links/ENDPOINTS   ========================= */
 .nav-links {
-  display: flex;
-  gap: 1rem;                   
-  flex-wrap: wrap;            
+  display: flex;                 
+  gap: 0.75rem;                  
+  align-items: center;
 }
 
-.btn {
-  color: #ffffff;
-  background-color: #3498db;
+.nav-btn {
   text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-  font-family: Arial, Helvetica, sans-serif;
-  white-space: nowrap;         
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.2s ease;
 }
 
-.btn:hover {
-  background-color: #2980b9;
+.nav-btn-secondary {
+  color: #475569;
 }
 
-.inicio {
+.nav-btn-secondary:hover {
+  color: var(--primary);
+  background-color: #f1f5f9;
+}
+
+.nav-btn-primary {
+  color: #ffffff;
+  background-color: var(--primary);
+}
+
+.nav-btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+/* ================   HAMBURGUER   ========================= */
+.menu-toggle {
+  display: none;                  
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+
+.menu-toggle i {
+  font-size: 28px;
+  color: var(--text-main);
+}
+
+/* --- 5. SECÇÃO HERO (O TEXTO DE APRESENTAÇÃO) --- */
+.hero {
+  padding: 5rem 1.5rem;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
-.inicio h1{
-  text-align: center;
-  margin-top: 50px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 45px;
+.badge {
+  display: inline-flex;
+  gap: 0.5rem;
+  background-color: #dbeafe;
+  color: var(--primary);
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
 }
-.minutos_cor_diferente{
-  color: #2980b9;
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
 }
-.slogan{
-  margin-top: 20px;
-  font-size: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+.highlight {
+  color: var(--primary);
+}
+
+.slogan {
+  margin-top: 1.25rem;
+  font-size: 1.25rem;
+  color: #475569;
+}
+
+.hero-actions {
+  margin-top: 2rem;
+}
+
+.cta-btn {
+  background-color: var(--primary);
+  color: #ffffff;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+/* ================   RESPONSIVIDADE   ========================= */
+@media (max-width: 768px) {
+
+
+  .menu-toggle {
+    display: block;
+  }
+
+
+  .nav-links {
+    position: absolute;
+    top: 100%;                      
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-navbar);
+    flex-direction: column;        
+    align-items: stretch;
+    
+ 
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    gap: 0.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease-in-out; 
+  }
+
+
+  .nav-links.active {
+    max-height: 250px;             
+    opacity: 1;
+    visibility: visible;
+    padding: 1rem;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  .nav-btn {
+    text-align: center;
+    width: 100%;                   
+  }
+
+  .hero h1 {
+    font-size: 2rem;                
+  }
 }

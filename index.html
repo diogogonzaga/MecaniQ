@@ -1,27 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>MecaniQ - Encontre a sua oficina de confiança</title>
+
+    <!-- Links do Bootstrap e das fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="logo">
-    <a href="index.html"><img src="images/logo_title_sem.png" alt="Logotipo"></a>
-  </div>
 
-  <div class="nav-links">
-    <a href="#" class="btn">Início</a>
-    <a href="account/login/index.html" class="btn">Login</a>
-    <a href="account/create/index.html" class="btn">Criar Conta</a>
-  </div>
-</nav>
 
-<section id="inicio" class="inicio">
-  <h1>Encontre a oficina certa para o seu veiculo<br> em <span class="minutos_cor_diferente">minutos</span></h1>
-  <p class="slogan"><i>A sua oficina de confiança, sem perder tempo</i></p>
-</section>
+<header class="navbar-header">
+  <nav class="navbar">
+    
+    
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
+      </a>
+    </div>
+
+    <!-- Menu Hamburguer para dispositivos moveis -->
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="nav-links">
+      <a href="#" class="nav-btn nav-btn-secondary">Início</a>
+      <a href="account/login/index.html" class="nav-btn nav-btn-secondary">Login</a>
+      <a href="account/create/index.html" class="nav-btn nav-btn-primary">Criar Conta</a>
+    </div>
+
+  </nav>
+</header>
+
+
+<main>
+  <section id="inicio" class="hero">
+    <div class="hero-container">
+      <span class="badge"><i class="bi bi-shield-check"></i> Rápido, Simples & Transparente</span>
+      <h1>Encontre a oficina certa para o seu veículo em <span class="highlight">minutos</span></h1>
+      <p class="slogan">A sua oficina de confiança, sem perder tempo.</p>
+      
+      <div class="hero-actions">
+        <a href="account/create/index.html" class="cta-btn">Procurar Oficina Agora <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+</main>
+<script src="js/script.js"></script>
 </body>
 </html>
