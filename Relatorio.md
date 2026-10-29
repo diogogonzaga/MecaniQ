@@ -18,3 +18,4 @@
 //29 outubro 
 - adição do footer
 - Otimização do Footer
+- Otimização no login e create 
