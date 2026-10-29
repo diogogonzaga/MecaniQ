@@ -42,4 +42,8 @@ Escolher uma oficina e efetuar uma marcação para o serviço pretendido.
 
 Tornar o processo de encontrar uma oficina **mais rápido, simples e transparente**, evitando que o utilizador tenha de contactar várias oficinas individualmente para descobrir disponibilidade e preços.
 
-##
+##  Elementos do Grupo
+
+- Diogo Gonzaga
+- Francisco Costa
+- Gonçalo Covelinhas
