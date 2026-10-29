@@ -163,4 +163,25 @@ input:focus {
 .btn-reset:hover {
   background-color: #e2e8f0;
   color: #334155;
+  /* Estilo para o texto geral */
+.register-text {
+  text-align: center;    /* Centraliza o texto */
+  margin-top: 20px;       /* Cria um espaço seguro abaixo do botão */
+  font-family: sans-serif;
+  font-size: 14px;        /* Tamanho de letra ideal para leitura */
+  color: #333333;         /* Cor do texto (cinzento escuro) */
+}
+
+/* Estilo específico para o link "Criar conta" */
+.register-text a {
+  color: #007bff;        
+  text-decoration: none;  
+  font-weight: bold;      
+}
+
+/* Efeito visual quando o utilizador passa o rato por cima do link */
+.register-text a:hover {
+  text-decoration: underline; 
+}
+
 }
