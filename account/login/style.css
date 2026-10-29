@@ -36,6 +36,10 @@ body {
   max-width: 160px;            
   height: auto;                
   display: block;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
 }
 
 .nav-links {
