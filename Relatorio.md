@@ -14,3 +14,6 @@ Correção do tamanho do logo tipo para os despositivos moveis
 Ínicio da pagina inicial
 Frase e slogan
 Formolário de login e de criação da conta
+
+//29 outubro 
+adição do footer
