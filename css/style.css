@@ -1,8 +1,11 @@
 /* Variaveis de Cores*/
 :root {
   --primary: #2563eb;       /* Cor principal (Azul) */
-  --bg-navbar: #ffffff;     /* Fundo branco */
-  --text-main: #0f172a;     /* Cor do texto escuro */
+  --primary-hover: #1d4ed8; /* Azul escuro para hover */
+  --bg-navbar: #ffffff;     /* Fundo branco da navbar */
+  --text-main: #0f172a;     /* Cor do texto escuro principal */
+  --text-muted: #475569;    /* Cor de texto secundário/cinzento */
+  --bg-body: #f8fafc;       /* Fundo geral da página */
 }
 
 * {
@@ -13,7 +16,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f8fafc;
+  background-color: var(--bg-body);
+  color: var(--text-main);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,9 +30,9 @@ main {
 /* ================   NAVBAR   ========================= */
 .navbar-header {
   background-color: var(--bg-navbar);
-  position: sticky;       
+  position: sticky;         
   top: 0;
-  z-index: 1000;          
+  z-index: 1000;           
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -64,7 +68,7 @@ main {
 }
 
 .nav-btn-secondary {
-  color: #475569;
+  color: var(--text-muted);
 }
 
 .nav-btn-secondary:hover {
@@ -78,7 +82,7 @@ main {
 }
 
 .nav-btn-primary:hover {
-  background-color: #1d4ed8;
+  background-color: var(--primary-hover);
 }
 
 /* ================   HAMBURGUER   ========================= */
@@ -95,7 +99,7 @@ main {
   color: var(--text-main);
 }
 
-/* --- 5. SECÇÃO HERO (O TEXTO DE APRESENTAÇÃO) --- */
+/* ================   HERO   ========================= */
 .hero {
   padding: 5rem 1.5rem;
   text-align: center;
@@ -128,7 +132,7 @@ main {
 .slogan {
   margin-top: 1.25rem;
   font-size: 1.25rem;
-  color: #475569;
+  color: var(--text-muted);
 }
 
 .hero-actions {
@@ -144,13 +148,18 @@ main {
   font-weight: 600;
   display: inline-flex;
   gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: var(--primary-hover);
 }
 
 /* ================   FOOTER   ========================= */
 .footer {
   background-color: var(--text-main);
   color: #cbd5e1;
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
 }
 
 .footer-container {
@@ -159,46 +168,62 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+  font-size: 13px;
 }
 
-.footer-links {
+
+.policy {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.75rem 1.25rem;
+  gap: 1.5rem;
+  justify-content: center;
 }
 
-.footer-links a {
+.policy a {
   color: inherit;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
-.footer-links a:hover {
+.policy a:hover {
   color: #ffffff;
   text-decoration: underline;
 }
 
-/* ================   RESPONSIVIDADE   ========================= */
+
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: right;
+}
+
+.footer-contacts a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-contacts a:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ================   RESPONSIVIDADE DISPOSITIVOS MÓVEIS   ========================= */
 @media (max-width: 768px) {
-
-
+  /* Navbar Mobile */
   .menu-toggle {
     display: block;
   }
 
-
   .nav-links {
     position: absolute;
-    top: 100%;                      
+    top: 100%;                         
     left: 0;
     width: 100%;
     background-color: var(--bg-navbar);
-    flex-direction: column;        
+    flex-direction: column;            
     align-items: stretch;
-    
- 
     max-height: 0;
     opacity: 0;
     visibility: hidden;
@@ -208,9 +233,8 @@ main {
     transition: all 0.3s ease-in-out; 
   }
 
-
   .nav-links.active {
-    max-height: 250px;             
+    max-height: 250px;            
     opacity: 1;
     visibility: visible;
     padding: 1rem;
@@ -219,19 +243,28 @@ main {
 
   .nav-btn {
     text-align: center;
-    width: 100%;                   
+    width: 100%;                     
   }
+
 
   .hero h1 {
     font-size: 2rem;                
   }
 
+
   .footer-container {
     flex-direction: column;
     text-align: center;
+    gap: 1.5rem;
   }
 
-  .footer-links {
+  .policy {
+    flex-direction: row;
     justify-content: center;
+    gap: 1.2rem;
+  }
+
+  .footer-contacts {
+    text-align: center;
   }
 }
