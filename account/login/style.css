@@ -45,7 +45,7 @@ body {
 
 .btn {
   color: #ffffff;
-  background-color: #3498db;
+  background-color: #2563eb;
   text-decoration: none;
   padding: 0.5rem 1.25rem;
   border-radius: 6px;
@@ -56,7 +56,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #2980b9;
+  background-color: #2563eb;
 }
 
 .login-container {
@@ -74,7 +74,7 @@ body {
 
 
 fieldset {
-  border: 2px solid #3498db; 
+  border: 2px solid #2563eb; 
   border-radius: 10px;
   padding: 1.5rem;
   background-color: #ffffff;
@@ -85,7 +85,7 @@ legend {
   font-weight: 700;
   font-size: 1rem;
   color: #ffffff;
-  background-color: #3498db; 
+  background-color: #2563eb; 
   padding: 0.4rem 1rem;
   border-radius: 6px; 
   box-shadow: 0 4px 6px -1px rgba(52, 152, 219, 0.2);
@@ -118,7 +118,7 @@ input {
 }
 
 input:focus {
-  border-color: #3498db;
+  border-color: #2563eb;
   background-color: #ffffff;
   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
 }
@@ -133,7 +133,7 @@ input:focus {
 .btn-submit {
   flex: 2;
   padding: 0.75rem;
-  background-color: #3498db;
+  background-color: #2563eb;
   color: white;
   border: none;
   border-radius: 8px;
@@ -144,7 +144,7 @@ input:focus {
 }
 
 .btn-submit:hover {
-  background-color: #2980b9;
+  background-color: #2563eb;
 }
 
 .btn-reset {
