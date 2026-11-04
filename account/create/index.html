@@ -5,19 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MecaniQ - Login</title>
     <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="../../css/style.css">
+
 </head>
 <body>
 
-<nav class="navbar">
-  <div class="logo">
-    <a href="../../index.html"><img src="../../images/logo_title_sem.png" alt="Logotipo"></a>
-  </div>
+<header class="navbar-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../../index.html">
+        <img src="../../images/logo_title_sem.png" alt="MecaniQ Logotipo">
+      </a>
+    </div>
 
-  <div class="nav-links">
-    <a href="../../index.html" class="btn">Início</a>
-    <a href="../login/index.html" class="btn btn-active">Login</a>
-  </div>
-</nav>
+    <!-- Menu Hamburguer para dispositivos moveis -->
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="nav-links">
+      <a href="../../index.html" class="nav-btn nav-btn-secondary">Início</a>
+      <a href="../login/" class="nav-btn nav-btn-primary">Login</a>
+    </div>
+  </nav>
+</header>
 
 <main class="login-container">
     <section id="login_card" class="login_card">
