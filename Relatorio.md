@@ -27,7 +27,7 @@
 
 4 novembro
 --
-- Headers iguais
+- Melhora dos Headers e  iguais 
 - Primeiro Swal Fire no botão de Login
 
 5 novembro
