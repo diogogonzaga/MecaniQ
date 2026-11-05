@@ -24,3 +24,12 @@
 - adição do footer
 - Otimização do Footer
 - Otimização no login e create 
+
+4 novembro
+--
+- Headers iguais
+- Primeiro Swal Fire no botão de Login
+
+5 novembro
+--
+- Swal Fires de Política de Privacidade e Termos de uso
