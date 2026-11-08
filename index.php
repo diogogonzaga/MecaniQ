@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecaniQ - Encontre a sua oficina de confiança</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
+      </a><?php echo"Bom dia"; ?>
+    </div>
+
+    <!-- Menu Hamburguer para dispositivos moveis -->
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="nav-links">
+      <a href="#" class="nav-btn nav-btn-secondary">Início</a>
+      <a href="account/login/index.html" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
+      <a href="account/create/index.html" class="nav-btn nav-btn-primary" id="account" onclick="account(event)">Criar Conta</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <section id="inicio" class="hero">
+    <div class="hero-container">
+      <span class="badge"><i class="bi bi-shield-check"></i> Rápido, Simples & Transparente</span>
+      <h1>Encontre a oficina certa para o seu veículo em <span class="highlight">minutos</span></h1>
+      <p class="slogan">A sua oficina de confiança, sem perder tempo.</p>
+      
+      <div class="hero-actions">
+        <a href="account/create/index.html" class="cta-btn">Procurar Oficina Agora <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2026 MecaniQ. Todos os direitos reservados.</p>
+      
+      <div class="policy">
+        <a href="#" id="Privacidade" onclick="Privacidade()">Política de Privacidade</a>
+        <a href="#" id="Termos" onclick="Termos()">Termos de Serviço</a>
+      </div>
+
+      <div class="footer-contacts">
+        <a href="mailto:contato@mecaniq.com">Contato por email: contato@mecaniq.com</a>
+        <a href="tel:+551112345678">Contato por telefone: (11) 1234-5678</a>
+      </div>
+    </div>
+</footer>
+<!-- Script para os alertas bonitos em Swal Fire -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/script.js"></script>
+<script src="js/swalfire.js"></script>
+
+</body>
+</html>
