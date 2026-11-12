@@ -33,3 +33,9 @@
 5 novembro
 --
 - Swal Fires de Política de Privacidade e Termos de uso
+
+
+12 novembro
+--
+- Campos especificos na criação da conta
+- Criação da bd
