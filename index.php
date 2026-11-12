@@ -15,12 +15,22 @@
     <div class="logo">
       <a href="index.html">
         <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
-      </a><span><?php
-        $hora = (int) date('G');
-        echo $hora >= 5 && $hora < 12
-          ? 'Bom dia'
-          : ($hora >= 12 && $hora < 19 ? 'Boa tarde' : 'Boa noite');
-      ?></span>
+      </a><span>
+        <?php
+         $hora = (int) date('G');
+        if($hora >= 5 && $hora < 12)
+          {
+            echo "Bom dia";
+          }
+          elseif($hora >= 12 && $hora <19)
+            {
+              echo "Boa tarde";
+            }
+            else{
+              echo "Boa noite";
+            }
+          ?>
+          </span>
     </div>
 
     <!-- Menu Hamburguer para dispositivos moveis -->
