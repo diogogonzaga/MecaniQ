@@ -39,3 +39,4 @@
 --
 - Campos especificos na criação da conta
 - Criação da bd
+- Horário php
