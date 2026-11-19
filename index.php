@@ -41,7 +41,7 @@
     <div class="nav-links">
       <a href="#" class="nav-btn nav-btn-secondary">Início</a>
       <a href="account/login/index.html" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
-      <a href="account/create/index.php" class="nav-btn nav-btn-primary" id="account" onclick="account(event)">Criar Conta</a>
+      <a href="account/create/index.php" class="nav-btn nav-btn-primary" id="account_conta" onclick="account_conta(event)">Criar Conta</a>
     </div>
   </nav>
 </header>
@@ -77,8 +77,8 @@
 </footer>
 <!-- Script para os alertas bonitos em Swal Fire -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="js/script.js"></script>
 <script src="js/swalfire.js"></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>

@@ -9,8 +9,8 @@ if (isset($_POST['submit'])) {
     $pass = $_POST['pass'];
 
     // Insere os dados no banco de dados
-    $result = mysqli_query($conexao, "INSERT INTO users(name, address,  mail, pass) 
-        VALUES ('$name', '$address', '$mail', '$pass')");
+$stmt = $pdo->prepare("INSERT INTO users (name, address, mail, pass) VALUES (?, ?, ?, ?)");
+    $stmt->execute([$name, $address, $mail, $pass]);
 
     // Redireciona para a página de login
     header('Location: ../../index.php');
