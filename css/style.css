@@ -27,6 +27,8 @@ main {
   flex: 1;
 }
 
+
+
 /* ================   NAVBAR   ========================= */
 .navbar-header {
   background-color: var(--bg-navbar);
