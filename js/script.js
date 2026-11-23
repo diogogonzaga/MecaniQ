@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   menuToggle.addEventListener('click', () => {
     navLinks.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', navLinks.classList.contains('active') ? 'true' : 'false');
     
     // Alterna o ícone entre hambúrguer (bi-list) e fechar (bi-x)
     if (navLinks.classList.contains('active')) {
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('click', (event) => {
     if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
       navLinks.classList.remove('active');
+      menuToggle.setAttribute('aria-expanded', 'false');
       icon.classList.remove('bi-x');
       icon.classList.add('bi-list');
     }
