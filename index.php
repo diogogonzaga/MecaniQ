@@ -14,7 +14,7 @@
 <header class="navbar-header">
   <nav class="navbar">
     <div class="logo">
-      <a href="index.html">
+      <a href="index.php">
         <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
       </a><span>
         <?php
@@ -40,7 +40,7 @@
     </button>
 
     <div class="nav-links">
-      <a href="#" class="nav-btn nav-btn-secondary">Início</a>
+      <a href="index.php" class="nav-btn nav-btn-secondary">Início</a>
       <a href="account/login/index.html" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
       <a href="account/create/index.php" class="nav-btn nav-btn-primary" id="account" onclick="account_conta(event)">Criar Conta</a>
     </div>
@@ -55,7 +55,7 @@
       <p class="slogan">A sua oficina de confiança, sem perder tempo.</p>
       
       <div class="hero-actions">
-        <a href="account/create/index.html" class="cta-btn">Procurar Oficina Agora <i class="bi bi-arrow-right"></i></a>
+        <a href="oficinas.php" class="cta-btn">Procurar Oficina Agora <i class="bi bi-arrow-right"></i></a>
       </div>
     </div>
   </section>
