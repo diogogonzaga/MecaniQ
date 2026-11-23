@@ -65,6 +65,17 @@
         </form>
       </div>
     </div>
+      <div class="workshops-list">
+        <article class="workshop-card">
+          <div class="workshop-info">
+            <h2 class="workshop-name">Nome oficina: <span>Auto Mecânica Central</span></h2>
+            <p class="workshop-address">Morada: <span>Rua de Santa Catarina 450, Porto</span></p>
+          </div>
+          <div class="workshop-contact">
+            Contacto: <a href="tel:220123456">220 123 456</a>
+          </div>
+        </article>
+      </div>
   </section>
 </main>
 
