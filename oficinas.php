@@ -48,9 +48,26 @@
         <h1>Encontrar Mecânico</h1>
         <p>Pesquise oficinas disponíveis na sua área de residência</p>
       </div>
+
+      <div class="search-district-box">
+        <form method="GET" action="oficinas.php" class="search-form">
+          <div class="search-input-wrapper">
+            <input 
+              type="text" 
+              name="distrito" 
+              placeholder="Insira aqui o seu distrito:" 
+              aria-label="Insira aqui o seu distrito"
+            >
+          </div>
+          <button type="submit" class="search-btn">
+            Pesquisar
+          </button>
+        </form>
+      </div>
     </div>
   </section>
 </main>
+
 
 <footer class="footer">
     <div class="footer-container">
