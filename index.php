@@ -14,7 +14,7 @@
 <header class="navbar-header">
   <nav class="navbar">
     <div class="logo">
-      <a href="index.php">
+      <a href="index.html">
         <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
       </a><span>
         <?php
@@ -40,7 +40,7 @@
     </button>
 
     <div class="nav-links">
-      <a href="index.php" class="nav-btn nav-btn-secondary">Início</a>
+      <a href="index.html" class="nav-btn nav-btn-secondary">Início</a>
       <a href="account/login/index.html" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
       <a href="account/create/index.php" class="nav-btn nav-btn-primary" id="account" onclick="account_conta(event)">Criar Conta</a>
     </div>
