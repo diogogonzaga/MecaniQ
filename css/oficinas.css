@@ -1,6 +1,30 @@
 .workshops-page {
   width: 100%;
   padding: 3.5rem 1.5rem 5rem;
+  min-height: calc(100vh - 160px);
+  background-color: #f8fafc;
+}
+
+.workshops-container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.workshops-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.workshops-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.workshops-header p {
+  color: #64748b;
+  font-size: 1rem;
 }
 
 
