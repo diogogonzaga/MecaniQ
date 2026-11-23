@@ -6,11 +6,11 @@ if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $address = $_POST['address'];
     $mail = $_POST['mail'];
-    $pass = $_POST['pass'];
+$passHash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
 
     // Insere os dados no banco de dados
 $stmt = $pdo->prepare("INSERT INTO users (name, address, mail, pass) VALUES (?, ?, ?, ?)");
-    $stmt->execute([$name, $address, $mail, $pass]);
+    $stmt->execute([$name, $address, $mail, $passHash]);
 
     // Redireciona para a página de login
     header('Location: ../../index.php');

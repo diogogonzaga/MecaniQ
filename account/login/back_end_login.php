@@ -8,18 +8,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['mail']) && !empty($_
     $pass = $_POST['pass'];
 
     try {
-        $sql = "SELECT id, name, address, mail, pass FROM users WHERE mail = :mail AND pass = :pass LIMIT 1";
+        $sql = "SELECT id, name, address, mail, pass FROM users WHERE mail = :mail LIMIT 1";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':mail' => $mail,
-            ':pass' => $pass,
         ]);
 
         $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($row) {
+        if ($row && password_verify($pass, $row['pass'])) {
+            session_regenerate_id(true);
             $_SESSION['mail'] = $row['mail'];
             $_SESSION['id'] = $row['id'];
+            $_SESSION['name'] = $row['name'];
 
             header("Location: ../../index.php");
             exit();
