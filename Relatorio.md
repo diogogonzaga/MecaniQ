@@ -49,3 +49,7 @@
 22 novembro
 --
 - Login já funciona
+
+23 novembro
+--
+- Password com hash
