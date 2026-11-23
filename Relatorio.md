@@ -40,3 +40,12 @@
 - Campos especificos na criação da conta
 - Criação da bd
 - Horário php
+
+
+19 novembro
+--
+- Logotipo da MecaniQ em vez do Xampp
+
+22 novembro
+--
+- Login já funciona
