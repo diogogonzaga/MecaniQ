@@ -85,3 +85,230 @@
   background-color: #1d4ed8;
 }
 
+
+
+
+
+
+
+
+
+
+/* Secção principal da listagem de oficinas */
+.workshops-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+}
+
+.workshops-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2.25rem;
+}
+
+.workshops-header {
+  text-align: center;
+}
+
+.workshops-header h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.75rem, 3vw, 2.35rem);
+  color: #111827;
+}
+
+.workshops-header p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 1rem;
+}
+
+/* Caixa de pesquisa por distrito */
+.search-district-box {
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  background: #ffffff;
+  padding: 0.5rem;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.05);
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+}
+
+.search-input-wrapper input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.98rem;
+  color: #111827;
+  background: transparent;
+}
+
+.search-input-wrapper input::placeholder {
+  color: #9ca3af;
+}
+
+.search-btn {
+  padding: 0.7rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #1d4ed8;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.search-btn:hover {
+  background-color: #1e40af;
+}
+
+.search-btn:active {
+  transform: scale(0.99);
+}
+
+/* Grelha / lista de cards */
+.workshops-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.35rem;
+}
+
+.workshop-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.15rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.4rem;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.workshop-card:hover {
+  transform: translateY(-3px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+}
+
+.workshop-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.workshop-name {
+  margin: 0 0 0.25rem;
+  font-size: 1.15rem;
+  line-height: 1.35;
+  color: #111827;
+}
+
+.workshop-name span,
+.workshop-address span,
+.workshop-days span,
+.workshop-hours span {
+  font-weight: 400;
+  color: #374151;
+}
+
+.workshop-address,
+.workshop-days,
+.workshop-hours,
+.workshop-mail {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.45;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.workshop-mail a {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.workshop-mail a:hover {
+  text-decoration: underline;
+}
+
+/* Rodapé do card / contacto */
+.workshop-contact {
+  padding-top: 0.9rem;
+  border-top: 1px solid #f1f5f9;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.workshop-contact a {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.workshop-contact a:hover {
+  background-color: #1d4ed8;
+  color: #ffffff;
+}
+
+/* Mensagem quando não há resultados */
+.no-workshops {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  margin: 0;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+  border-radius: 12px;
+  color: #475569;
+  font-size: 1rem;
+}
+
+/* Responsividade mobile */
+@media (max-width: 600px) {
+  .workshops-page {
+    padding: 1.75rem 1rem 3rem;
+  }
+
+  .search-form {
+    flex-direction: column;
+    padding: 0.65rem;
+  }
+
+  .search-btn {
+    width: 100%;
+  }
+
+  .workshop-contact {
+    flex-wrap: wrap;
+  }
+}
