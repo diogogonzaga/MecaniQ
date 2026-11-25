@@ -73,7 +73,7 @@ if (isset($_POST['submit'])) {
 
     <div class="nav-links">
       <a href="../../index.html" class="nav-btn nav-btn-secondary">Início</a>
-      <a href="../login/" class="nav-btn nav-btn-primary">Login</a>
+      <a href="../login/index.php" class="nav-btn nav-btn-primary">Login</a>
     </div>
   </nav>
 </header>

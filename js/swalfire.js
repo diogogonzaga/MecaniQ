@@ -14,7 +14,7 @@ html: "Esta página é apenas para oficinas.<br>Deseja prosseguir?",
         cancelButtonText: "Cancelar"
     }).then((result) => {
         if (result.isConfirmed) {
-            window.location.href = "account/login/index.html";
+            window.location.href = "account/login/index.php";
         }
     });
 }

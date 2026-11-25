@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['mail']) && !empty($_
             header("Location: ../../index.php");
             exit();
         } else {
-            header("Location: index.html?error=1");
+         $_SESSION['login_error'] = "Email ou password incorretos.";
+            header("Location: index.php");
             exit();
         }
     } catch (PDOException $e) {
