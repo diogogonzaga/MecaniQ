@@ -22,20 +22,16 @@ unset($_SESSION['welcome_name']);
       <a href="index.html">
         <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
       </a><span>
-        <?php
-         $hora = (int) date('G');
-        if($hora >= 5 && $hora < 12)
-          {
-            echo "Bom dia";
-          }
-          elseif($hora >= 12 && $hora <19)
-            {
-              echo "Boa tarde";
-            }
-            else{
-              echo "Boa noite";
-            }
-          ?>
+         <?php
+$hora = (int) date('G');
+if ($hora >= 5 && $hora < 12) {
+    $saudacao = "Bom dia";
+} elseif ($hora >= 12 && $hora < 19) {
+    $saudacao = "Boa tarde";
+} else {
+    $saudacao = "Boa noite";
+}
+?>
           </span>
     </div>
 
@@ -90,7 +86,7 @@ unset($_SESSION['welcome_name']);
         Swal.fire({
             icon: 'success',
             title: 'Bem-vindo!',
-            text: <?= json_encode("Olá, " . $welcomeName . "!", JSON_UNESCAPED_UNICODE) ?>,
+text: <?= json_encode($saudacao . " " . $welcomeName . "!", JSON_UNESCAPED_UNICODE) ?>,
             confirmButtonColor: '#2563eb',
             timer: 2500,
             timerProgressBar: true
