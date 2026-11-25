@@ -53,3 +53,11 @@
 23 novembro
 --
 - Password com hash
+
+25 novembro
+--
+- Mudança nos End Points
+- Adição de mais campos no registo
+- Alterações na BD
+- Adição de verificações no Login
+- Adição de Swal Fires
