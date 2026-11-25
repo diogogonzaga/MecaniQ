@@ -16,16 +16,7 @@
       <a href="index.php">
         <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
       </a><span>
-        <!-- <?php
-        $hora = (int) date('G');
-        if ($hora >= 5 && $hora < 12) {
-            echo "Bom dia";
-        } elseif ($hora >= 12 && $hora < 19) {
-            echo "Boa tarde";
-        } else {
-            echo "Boa noite";
-        }
-        ?> -->
+
       </span>
     </div>
 
