@@ -1,20 +1,46 @@
 <?php
+$erro = '';
 
 if (isset($_POST['submit'])) {
-    include_once('../../bd/conecao_db.php');
+    $name = trim($_POST['name'] ?? '');
+    $address = trim($_POST['address'] ?? '');
+    $mail = trim($_POST['mail'] ?? '');
+    $telefone = trim($_POST['telefone'] ?? '');
+    $dias = $_POST['dias'] ?? [];
+    $horaAbertura = trim($_POST['hora_abertura'] ?? '');
+    $horaFecho = trim($_POST['hora_fecho'] ?? '');
+    $pass = $_POST['pass'] ?? '';
 
-    $name = $_POST['name'];
-    $address = $_POST['address'];
-    $mail = $_POST['mail'];
-$passHash = password_hash($_POST['pass'], PASSWORD_DEFAULT);
+    if (
+        $name === '' ||
+        $address === '' ||
+        $mail === '' ||
+        $telefone === '' ||
+        !is_array($dias) || count($dias) === 0 ||
+        $horaAbertura === '' ||
+        $horaFecho === '' ||
+        $pass === ''
+    ) {
+        $erro = 'Preencha todos os campos obrigatórios e escolha pelo menos um dia.';
+    } elseif (!filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+        $erro = 'Introduza um endereço de email válido.';
+    } elseif (!preg_match('/^[0-9]{9}$/', $telefone)) {
+        $erro = 'O telefone deve ter exatamente 9 dígitos.';
+    } else {
+        include_once('../../bd/conecao_db.php');
 
-    // Insere os dados no banco de dados
-$stmt = $pdo->prepare("INSERT INTO users (name, address, mail, pass) VALUES (?, ?, ?, ?)");
-    $stmt->execute([$name, $address, $mail, $passHash]);
+        $diasTexto = implode(',', $dias);
+        $passHash = password_hash($pass, PASSWORD_DEFAULT);
 
-    // Redireciona para a página de login
-    header('Location: ../../index.php');
-    exit();
+        $stmt = $pdo->prepare("
+            INSERT INTO oficinas (name, address, mail, telefone, dias_disponiveis, hora_abertura, hora_fecho, pass)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+        ");
+        $stmt->execute([$name, $address, $mail, $telefone, $diasTexto, $horaAbertura, $horaFecho, $passHash]);
+
+        header('Location: ../../index.php');
+        exit();
+    }
 }
 ?>
 
@@ -54,7 +80,7 @@ $stmt = $pdo->prepare("INSERT INTO users (name, address, mail, pass) VALUES (?, 
 
 <main class="login-container">
     <section id="login_card" class="login_card">
-        <!-- GET temporário até termos a BD -->
+ 
         <form action="index.php" method="POST" class="form">
             <fieldset>
                 <legend>Dados de Criação de Conta</legend>
@@ -73,6 +99,33 @@ $stmt = $pdo->prepare("INSERT INTO users (name, address, mail, pass) VALUES (?, 
                     <label for="mail">Digite o seu email:</label>
                     <input type="email" name="mail" id="mail" placeholder="exemplo@gmail.com" required>
                 </div>
+
+                <div class="grupo">
+                    <label for="telefone">Digite o seu telefone:</label>
+                    <input type="text" name="telefone" id="telefone" placeholder="912345678" required>
+                </div>
+
+                <div class="grupo">
+                <label>Dias de disponibilidade:</label>
+                  <div class="dias-semana">
+                 <label><input type="checkbox" name="dias[]" value="seg"> Seg</label>
+                <label><input type="checkbox" name="dias[]" value="ter"> Ter</label>
+                <label><input type="checkbox" name="dias[]" value="qua"> Qua</label>
+                <label><input type="checkbox" name="dias[]" value="qui"> Qui</label>
+                <label><input type="checkbox" name="dias[]" value="sex"> Sex</label>
+                <label><input type="checkbox" name="dias[]" value="sab"> Sáb</label>
+                <label><input type="checkbox" name="dias[]" value="dom"> Dom</label>
+            </div>
+        </div>
+
+<div class="grupo">
+    <label for="hora_abertura">Horário de funcionamento:</label>
+    <div class="horario-grupo">
+        <input type="time" name="hora_abertura" id="hora_abertura" value="09:00" required>
+        <span class="asinhas">às</span>
+        <input type="time" name="hora_fecho" id="hora_fecho" value="18:00" required>
+    </div>
+</div>
 
                 <div class="grupo">
                     <label for="pass">Digite a sua password:</label>

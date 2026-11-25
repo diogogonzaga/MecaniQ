@@ -13,16 +13,18 @@ body {
   flex-direction: column;
 }
 
+.navbar-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
 
 .navbar {
   display: flex;
-  justify-content: space-between; 
-  align-items: center;            
-  padding: 0rem 2rem;         
-  color: #ffffff;
-  height: auto;
-  flex-wrap: wrap;          
-  gap: 1rem;                 
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .logo {
@@ -32,31 +34,55 @@ body {
 
 .logo img {
   border-radius: 8px;
-  max-width: 160px;            
-  height: auto;                
+  max-width: 160px;
+  height: auto;
   display: block;
 }
 
 .nav-links {
   display: flex;
-  gap: 0.75rem;                
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.btn {
-  color: #ffffff;
-  background-color: #2563eb;
+.nav-btn {
   text-decoration: none;
   padding: 0.5rem 1.25rem;
   border-radius: 6px;
   font-size: 0.95rem;
   font-weight: 500;
   transition: all 0.2s ease;
-  white-space: nowrap;         
+  white-space: nowrap;
 }
 
-.btn:hover {
+.nav-btn-primary {
+  color: #ffffff;
   background-color: #2563eb;
 }
+
+.nav-btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.nav-btn-secondary {
+  color: #334155;
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+}
+
+.nav-btn-secondary:hover {
+  background-color: #e2e8f0;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #334155;
+  cursor: pointer;
+}
+
 
 .login-container {
   flex: 1;
@@ -68,28 +94,26 @@ body {
 
 .login_card {
   width: 100%;
-  max-width: 440px;
+  max-width: 460px;
 }
 
-
 fieldset {
-  border: 2px solid #3498db; 
+  border: 2px solid #2563eb;
   border-radius: 10px;
   padding: 1.5rem;
   background-color: #ffffff;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08); 
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
 }
 
 legend {
   font-weight: 700;
   font-size: 1rem;
   color: #ffffff;
-  background-color: #2563eb; 
+  background-color: #2563eb;
   padding: 0.4rem 1rem;
-  border-radius: 6px; 
-  box-shadow: 0 4px 6px -1px rgba(52, 152, 219, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.25);
 }
-
 
 .grupo {
   margin-bottom: 1.25rem;
@@ -97,31 +121,90 @@ legend {
   flex-direction: column;
 }
 
-label {
+.grupo > label {
   font-size: 0.9rem;
   font-weight: 600;
   color: #475569;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.45rem;
 }
 
-input {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="time"] {
   width: 100%;
-  padding: 0.75rem 0.9rem;
+  padding: 0.7rem 0.85rem;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 0.95rem;
   font-family: inherit;
+  color: #1e293b;
   outline: none;
   transition: all 0.2s ease;
   background-color: #f8fafc;
 }
 
-input:focus {
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="time"]:focus {
   border-color: #2563eb;
   background-color: #ffffff;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
+.dias-semana {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dias-semana label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.7rem;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dias-semana label:hover {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.dias-semana input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.horario-grupo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.horario-grupo input[type="time"] {
+  flex: 1;
+  min-width: 0;
+}
+
+.asinhas {
+  flex-shrink: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #64748b;
+  user-select: none;
+}
 
 .botoes-grupo {
   display: flex;
@@ -133,7 +216,7 @@ input:focus {
   flex: 2;
   padding: 0.75rem;
   background-color: #2563eb;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 8px;
   font-weight: 600;
@@ -143,7 +226,7 @@ input:focus {
 }
 
 .btn-submit:hover {
-  background-color: #2563eb;
+  background-color: #1d4ed8;
 }
 
 .btn-reset {
@@ -165,6 +248,28 @@ input:focus {
 }
 
 .francesinha {
-text-align: center;   
+  text-align: center;
   margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.francesinha a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.francesinha a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+
+  .botoes-grupo {
+    flex-direction: column;
+  }
 }
