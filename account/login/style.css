@@ -186,6 +186,18 @@ input:focus {
 
 }
 .francesinha {
-text-align: center;   
+  text-align: center;
   margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.francesinha a {
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.francesinha a:hover {
+  text-decoration: underline;
 }
