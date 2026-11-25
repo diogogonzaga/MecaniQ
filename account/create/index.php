@@ -137,7 +137,7 @@ if (isset($_POST['submit'])) {
                     <button type="reset" class="btn-reset">Limpar Dados</button>
                 </div>
 <div class="francesinha">
-    Já tem uma conta? <a href="../login/index.html">Entrar na conta</a>
+    Já tem uma conta? <a href="../login/index.php">Entrar na conta</a>
 </div>
 
             

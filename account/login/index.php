@@ -64,7 +64,7 @@ unset($_SESSION['login_error']);
                     <button type="reset" class="btn-reset">Limpar Dados</button>
 </div>
 <div class="francesinha">
-  Não tem uma conta? <a href="../create/index.html">Criar conta</a>
+  Não tem uma conta? <a href="../create/index.php">Criar conta</a>
 </div>
 
   <!-- Texto de registo -->
