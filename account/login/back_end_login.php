@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['mail']) && !empty($_
     $pass = $_POST['pass'];
 
     try {
-        $sql = "SELECT id, name, address, mail, pass FROM users WHERE mail = :mail LIMIT 1";
+        $sql = "SELECT * FROM oficinas WHERE mail = :mail LIMIT 1";
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
             ':mail' => $mail,
@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['mail']) && !empty($_
             header("Location: ../../index.php");
             exit();
         } else {
-            header("Location: index.html?error=1");
+         $_SESSION['login_error'] = "Email ou password incorretos.";
+            header("Location: index.php");
             exit();
         }
     } catch (PDOException $e) {

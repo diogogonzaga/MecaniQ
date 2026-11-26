@@ -1,3 +1,8 @@
+<?php
+session_start();
+$welcomeName = $_SESSION['name'] ?? null;
+unset($_SESSION['welcome_name']);
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -17,20 +22,16 @@
       <a href="index.html">
         <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
       </a><span>
-        <?php
-         $hora = (int) date('G');
-        if($hora >= 5 && $hora < 12)
-          {
-            echo "Bom dia";
-          }
-          elseif($hora >= 12 && $hora <19)
-            {
-              echo "Boa tarde";
-            }
-            else{
-              echo "Boa noite";
-            }
-          ?>
+         <?php
+$hora = (int) date('G');
+if ($hora >= 5 && $hora < 12) {
+    $saudacao = "Bom dia";
+} elseif ($hora >= 12 && $hora < 19) {
+    $saudacao = "Boa tarde";
+} else {
+    $saudacao = "Boa noite";
+}
+?>
           </span>
     </div>
 
@@ -41,7 +42,7 @@
 
     <div class="nav-links">
       <a href="index.html" class="nav-btn nav-btn-secondary">Início</a>
-      <a href="account/login/index.html" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
+      <a href="account/login/index.php" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
       <a href="account/create/index.php" class="nav-btn nav-btn-primary" id="account" onclick="account_conta(event)">Criar Conta</a>
     </div>
   </nav>
@@ -80,6 +81,17 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/swalfire.js"></script>
 <script src="js/script.js"></script>
-
+<?php if ($welcomeName): ?>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Bem-vindo!',
+text: <?= json_encode($saudacao . " " . $welcomeName . "!", JSON_UNESCAPED_UNICODE) ?>,
+            confirmButtonColor: '#2563eb',
+            timer: 2500,
+            timerProgressBar: true
+        });
+    </script>
+    <?php endif; ?>
 </body>
 </html>

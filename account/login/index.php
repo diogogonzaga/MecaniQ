@@ -1,0 +1,91 @@
+<?php
+session_start();
+$loginError = $_SESSION['login_error'] ?? null;
+unset($_SESSION['login_error']); 
+?>
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MecaniQ - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+
+<header class="navbar-header">
+  <nav class="navbar">
+    <div class="logo">
+      <a href="../../index.html">
+        <img src="../../images/logo_title_sem.png" alt="MecaniQ Logotipo">
+      </a>
+    </div>
+
+    <!-- Menu Hamburguer para dispositivos moveis -->
+    <button class="menu-toggle" aria-label="Abrir Menu">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="nav-links">
+      <a href="../../index.html" class="nav-btn nav-btn-secondary">Início</a>
+      <a href="../create/" class="nav-btn nav-btn-primary">Criar Conta</a>
+    </div>
+  </nav>
+</header>
+
+<main class="login-container">
+  
+  
+
+
+  
+
+    <section id="login_card" class="login_card">
+        <!-- GET temporário até termos a BD -->
+        <form action="back_end_login.php" method="POST" class="form">
+            <fieldset>
+                <legend>Dados de Login</legend>
+
+                <div class="grupo">
+                    <label for="mail">Digite o seu email:</label>
+                    <input type="email" name="mail" id="mail" placeholder="exemplo@gmail.com" required>
+                </div>
+
+                <div class="grupo">
+                    <label for="pass">Digite a sua password:</label>
+                    <input type="password" name="pass" id="pass" placeholder="••••••••••••" required>
+                </div>
+
+                <div class="botoes-grupo">
+                    <button type="submit" name="submit" class="btn-submit">Submeter</button>
+                    <button type="reset" class="btn-reset">Limpar Dados</button>
+</div>
+<div class="francesinha">
+  Não tem uma conta? <a href="../create/index.php">Criar conta</a>
+</div>
+
+  <!-- Texto de registo -->
+
+</form>
+
+                </div>
+            </fieldset>
+        </form>
+    </section>
+</main>
+<?php if ($loginError): ?>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Erro ao entrar',
+            text: <?= json_encode($loginError, JSON_UNESCAPED_UNICODE) ?>,
+            confirmButtonColor: '#2563eb',
+            confirmButtonText: 'Tentar novamente'
+        });
+    </script>
+    <?php endif; ?>
+</body>
+</html>

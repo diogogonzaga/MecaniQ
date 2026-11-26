@@ -1,3 +1,26 @@
+<?php
+require_once 'bd/conecao_db.php';
+
+$distrito = isset($_GET['distrito']) ? trim($_GET['distrito']) : '';
+
+if ($distrito !== '') {
+    $sql = "SELECT id, name, address, mail, telefone, dias_disponiveis, hora_abertura, hora_fecho
+            FROM oficinas
+            WHERE address LIKE :distrito
+            ORDER BY name ASC";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute([
+        ':distrito' => '%' . $distrito . '%',
+    ]);
+} else {
+    $sql = "SELECT id, name, address, mail, telefone, dias_disponiveis, hora_abertura, hora_fecho
+            FROM oficinas
+            ORDER BY name ASC";
+    $stmt = $pdo->query($sql);
+}
+
+$oficinas = $stmt->fetchAll();
+?>
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -16,16 +39,7 @@
       <a href="index.php">
         <img src="images/logo_title_sem.png" alt="MecaniQ Logotipo">
       </a><span>
-        <?php
-        $hora = (int) date('G');
-        if ($hora >= 5 && $hora < 12) {
-            echo "Bom dia";
-        } elseif ($hora >= 12 && $hora < 19) {
-            echo "Boa tarde";
-        } else {
-            echo "Boa noite";
-        }
-        ?>
+
       </span>
     </div>
 
@@ -35,7 +49,7 @@
 
     <div class="nav-links">
       <a href="index.php" class="nav-btn nav-btn-secondary">Início</a>
-      <a href="account/login/index.html" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
+      <a href="account/login/index.php" class="nav-btn nav-btn-secondary" id="account" onclick="account(event)">Login</a>
       <a href="account/create/index.php" class="nav-btn nav-btn-primary" id="account-create" onclick="account_conta(event)">Criar Conta</a>
     </div>
   </nav>
@@ -55,6 +69,7 @@
             <input 
               type="text" 
               name="distrito" 
+              value="<?= htmlspecialchars($distrito, ENT_QUOTES, 'UTF-8') ?>"
               placeholder="Insira aqui o seu distrito:" 
               aria-label="Insira aqui o seu distrito"
             >
@@ -65,20 +80,46 @@
         </form>
       </div>
     </div>
-      <div class="workshops-list">
-        <article class="workshop-card">
-          <div class="workshop-info">
-            <h2 class="workshop-name">Nome oficina: <span>Auto Mecânica Central</span></h2>
-            <p class="workshop-address">Morada: <span>Rua de Santa Catarina 450, Porto</span></p>
-          </div>
-          <div class="workshop-contact">
-            Contacto: <a href="tel:220123456">220 123 456</a>
-          </div>
-        </article>
-      </div>
+
+    <div class="workshops-list">
+      <?php if (count($oficinas) > 0): ?>
+        <?php foreach ($oficinas as $oficina): ?>
+          <?php
+            $horaAbertura = !empty($oficina['hora_abertura']) ? substr($oficina['hora_abertura'], 0, 5) : '';
+            $horaFecho = !empty($oficina['hora_fecho']) ? substr($oficina['hora_fecho'], 0, 5) : '';
+            $telefoneLimpo = preg_replace('/\D/', '', (string) $oficina['telefone']);
+          ?>
+          <article class="workshop-card">
+            <div class="workshop-info">
+              <h2 class="workshop-name">Nome oficina: <span><?= htmlspecialchars($oficina['name'], ENT_QUOTES, 'UTF-8') ?></span></h2>
+              <p class="workshop-address">Morada: <span><?= htmlspecialchars($oficina['address'], ENT_QUOTES, 'UTF-8') ?></span></p>
+              <?php if (!empty($oficina['dias_disponiveis'])): ?>
+                <p class="workshop-days">Dias disponíveis: <span><?= htmlspecialchars($oficina['dias_disponiveis'], ENT_QUOTES, 'UTF-8') ?></span></p>
+              <?php endif; ?>
+              <?php if ($horaAbertura !== '' && $horaFecho !== ''): ?>
+                <p class="workshop-hours">Horário: <span><?= htmlspecialchars($horaAbertura . ' - ' . $horaFecho, ENT_QUOTES, 'UTF-8') ?></span></p>
+              <?php endif; ?>
+              <?php if (!empty($oficina['mail'])): ?>
+                <p class="workshop-mail">Email: <a href="mailto:<?= htmlspecialchars($oficina['mail'], ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars($oficina['mail'], ENT_QUOTES, 'UTF-8') ?></a></p>
+              <?php endif; ?>
+            </div>
+            <div class="workshop-contact">
+              Contacto: <a href="tel:<?= htmlspecialchars($telefoneLimpo, ENT_QUOTES, 'UTF-8') ?>"><?= htmlspecialchars((string) $oficina['telefone'], ENT_QUOTES, 'UTF-8') ?></a>
+            </div>
+          </article>
+        <?php endforeach; ?>
+      <?php else: ?>
+        <p class="no-workshops">
+          <?php if ($distrito !== ''): ?>
+            Não foram encontradas oficinas para "<?= htmlspecialchars($distrito, ENT_QUOTES, 'UTF-8') ?>".
+          <?php else: ?>
+            Ainda não existem oficinas registadas.
+          <?php endif; ?>
+        </p>
+      <?php endif; ?>
+    </div>
   </section>
 </main>
-
 
 <footer class="footer">
     <div class="footer-container">
@@ -93,7 +134,7 @@
       </div>
     </div>
 </footer>
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="js/swalfire.js"></script>
 <script src="js/script.js"></script>
 
