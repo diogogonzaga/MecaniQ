@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['mail']) && !empty($_
             $_SESSION['id'] = $row['id'];
             $_SESSION['name'] = $row['name'];
 
-            header("Location: ../../index.php");
+            header("Location: perfil_oficina.php");
             exit();
         } else {
          $_SESSION['login_error'] = "Email ou password incorretos.";
