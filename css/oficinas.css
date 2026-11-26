@@ -84,6 +84,77 @@
 .search-btn:hover {
   background-color: #1d4ed8;
 }
+.workshops-list {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.workshop-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 1.5rem 1.75rem;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background-color 0.2s ease;
+  gap: 1.5rem;
+}
+
+.workshop-card:last-child {
+  border-bottom: none;
+}
+
+.workshop-card:hover {
+  background-color: #f1f5f9;
+}
+
+.workshop-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.workshop-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.workshop-name span,
+.workshop-address span {
+  font-weight: 500;
+  color: #475569;
+}
+
+.workshop-address {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+}
+
+.workshop-contact {
+  text-align: right;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+}
+
+.workshop-contact a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.workshop-contact a:hover {
+  text-decoration: underline;
+}
 
 
 .workshops-page {
