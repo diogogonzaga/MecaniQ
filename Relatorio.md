@@ -62,3 +62,8 @@
 - Alterações na BD
 - Adição de verificações no Login
 - Adição de Swal Fires
+- Otimização da procura de oficinas
+
+26 novembro
+--
+- 
