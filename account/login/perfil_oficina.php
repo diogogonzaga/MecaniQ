@@ -183,7 +183,7 @@ $horaFechoVal = substr((string) $oficina['hora_fecho'], 0, 5);
                     <i class="bi bi-person-circle me-1"></i>
                     <?= htmlspecialchars($oficina['name']) ?>
                 </span>
-                <a href="logout.php" class="btn btn-outline-light btn-sm">
+                <a href="index.php" class="btn btn-outline-light btn-sm">
                     <i class="bi bi-box-arrow-right me-1"></i>Sair
                 </a>
             </div>
