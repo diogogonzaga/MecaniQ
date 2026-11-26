@@ -163,25 +163,23 @@ input:focus {
 .btn-reset:hover {
   background-color: #e2e8f0;
   color: #334155;
-  /* Estilo para o texto geral */
+
 .register-text {
-  text-align: center;    /* Centraliza o texto */
-  margin-top: 20px;       /* Cria um espaço seguro abaixo do botão */
+  text-align: center;    
+  margin-top: 20px;      
   font-family: sans-serif;
-  font-size: 14px;        /* Tamanho de letra ideal para leitura */
-  color: #333333;         /* Cor do texto (cinzento escuro) */
+  font-size: 14px;       
+  color: #333333;       
 }
 
-/* Estilo específico para o link "Criar conta" */
 .register-text a {
-  color: #007bff;         /* Cor azul para destacar que é um link */
-  text-decoration: none;  /* Remove o sublinhado padrão */
-  font-weight: bold;      /* Deixa o link em negrito */
+  color: #007bff;         
+  text-decoration: none;  
+  font-weight: bold;      
 }
 
-/* Efeito visual quando o utilizador passa o rato por cima do link */
 .register-text a:hover {
-  text-decoration: underline; /* Mostra o sublinhado ao passar o rato */
+  text-decoration: underline; 
 }
 
 }

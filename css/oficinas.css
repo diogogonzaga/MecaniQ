@@ -86,15 +86,6 @@
 }
 
 
-
-
-
-
-
-
-
-
-/* Secção principal da listagem de oficinas */
 .workshops-page {
   max-width: 1100px;
   margin: 0 auto;
@@ -124,7 +115,6 @@
   font-size: 1rem;
 }
 
-/* Caixa de pesquisa por distrito */
 .search-district-box {
   max-width: 680px;
   width: 100%;
@@ -182,7 +172,6 @@
   transform: scale(0.99);
 }
 
-/* Grelha / lista de cards */
 .workshops-list {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
@@ -251,7 +240,6 @@
   text-decoration: underline;
 }
 
-/* Rodapé do card / contacto */
 .workshop-contact {
   padding-top: 0.9rem;
   border-top: 1px solid #f1f5f9;
@@ -280,7 +268,6 @@
   color: #ffffff;
 }
 
-/* Mensagem quando não há resultados */
 .no-workshops {
   grid-column: 1 / -1;
   text-align: center;
@@ -293,7 +280,6 @@
   font-size: 1rem;
 }
 
-/* Responsividade mobile */
 @media (max-width: 600px) {
   .workshops-page {
     padding: 1.75rem 1rem 3rem;
